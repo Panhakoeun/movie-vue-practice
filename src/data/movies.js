@@ -39,4 +39,34 @@ export default [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCe_ZLa-BQA4_b4sfktCJywCAi2E-CZIerA&s',
     videoUrl: 'https://www.youtube.com/watch?v=kzAhy2aIJsg',
   },
+  {
+    id: 5,
+    title: 'Semur Seytanin Kabilesi',
+    genre: 'រឿងខ្មោចទុកមើល២នាក់សង្សា',
+    year: 2026,
+    description: 'រន្ធត់ព្រឺព្រួច',
+    image:
+      'https://m.media-amazon.com/images/M/MV5BOGJkZjljODgtOTI4Yi00MjJmLWEyZDktOTNmNzQ3NzM2Mjc5XkEyXkFqcGc@._V1_.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=w6En6nHbI14',
+  },
+  {
+    id: 6,
+    title: 'The Meat Grinder',
+    genre: 'រឿងខ្មោចទុកមើល២នាក់សង្សា',
+    year: 2026,
+    description: 'រន្ធត់ព្រឺព្រួច',
+    image:
+      'https://m.media-amazon.com/images/I/81He7ZFL1ZL._AC_UF894,1000_QL80_.jpg',
+    videoUrl: 'https://youtu.be/FwKD6bmWlKg?si=lgp2xx4yzSoqRYZA',
+  },
+  {
+    id: 7,
+    title: ' DEAD AGAIN',
+    genre: 'រឿងកូរ៉េ',
+    year: 2026,
+    description: 'រន្ធត់ព្រឺព្រួច',
+    image:
+      'https://movieassetsdigital.sgp1.cdn.digitaloceanspaces.com/original/50ad856ad036973206273efe6579d135279ac832',
+    videoUrl: 'https://youtu.be/y97D-Ixgya0?si=VOEHCc4GdY9Qf5LU',
+  },
 ]
