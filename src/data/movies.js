@@ -17,7 +17,7 @@ export default [
     year: 1997,
     description: 'Love story on a sinking ship.',
     image: 'https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=kVrqfYjkTdQ',
+    videoUrl: 'https://youtu.be/sz94j4IsDH4?si=8JUvMbY1dItZn2cb',
   },
 
   {
