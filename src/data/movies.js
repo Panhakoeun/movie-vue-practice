@@ -35,7 +35,8 @@ export default [
     genre: 'រឿងខ្មោច',
     year: 2026,
     description: 'រន្ធត់ព្រឺព្រួច',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCe_ZLa-BQA4_b4sfktCJywCAi2E-CZIerA&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCe_ZLa-BQA4_b4sfktCJywCAi2E-CZIerA&s',
     videoUrl: 'https://www.youtube.com/watch?v=kzAhy2aIJsg',
   },
 ]

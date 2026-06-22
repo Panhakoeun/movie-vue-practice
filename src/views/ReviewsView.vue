@@ -23,9 +23,9 @@ defineProps({
 
 <style scoped>
 .reviews-page {
-  width: min(760px, calc(100% - 32px));
+  width: min(760px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 34px 0 54px;
+  padding: clamp(24px, 5vw, 34px) 0 54px;
 }
 
 .heading {
@@ -42,8 +42,9 @@ defineProps({
 .heading h1 {
   margin: 0;
   color: #f8fafc;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 ul {
@@ -72,5 +73,17 @@ li {
   color: #111827;
   font-weight: 700;
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .reviews-page {
+    width: min(100% - 20px, 760px);
+    padding-bottom: 40px;
+  }
+
+  .back-link {
+    justify-content: center;
+    width: 100%;
+  }
 }
 </style>

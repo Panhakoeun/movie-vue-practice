@@ -38,11 +38,11 @@ const movie = computed(() => findMovie(props.id))
 <style lang="scss" scoped>
 .movie-page {
   display: grid;
-  grid-template-columns: minmax(220px, 340px) 1fr;
-  gap: 34px;
-  width: min(980px, calc(100% - 32px));
+  grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 34px);
+  width: min(980px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 42px 0 60px;
+  padding: clamp(26px, 5vw, 42px) 0 60px;
   align-items: start;
 }
 
@@ -67,8 +67,9 @@ span {
 h1 {
   margin: 10px 0 8px;
   color: #f8fafc;
-  font-size: clamp(2.3rem, 6vw, 5rem);
-  line-height: 0.95;
+  font-size: clamp(2.1rem, 9vw, 5rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .year {
@@ -101,7 +102,9 @@ button {
   padding: 0 16px;
   font: inherit;
   font-weight: 700;
+  line-height: 1.2;
   cursor: pointer;
+  text-align: center;
 }
 
 .watch-link,
@@ -132,6 +135,29 @@ button {
 
   .poster {
     max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-page {
+    width: min(100% - 20px, 980px);
+    padding-bottom: 42px;
+  }
+
+  .poster {
+    justify-self: center;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .watch-link,
+  .review-link,
+  button {
+    justify-content: center;
+    width: 100%;
   }
 }
 </style>

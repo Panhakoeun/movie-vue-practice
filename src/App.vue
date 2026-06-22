@@ -32,6 +32,17 @@ body {
     sans-serif;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
 }
@@ -42,6 +53,7 @@ a {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   padding: 18px 16px;
@@ -62,5 +74,17 @@ nav a:hover,
 nav a.router-link-active {
   background: #f59e0b;
   color: #111827;
+}
+
+@media (max-width: 480px) {
+  nav {
+    justify-content: stretch;
+    padding: 12px;
+  }
+
+  nav a {
+    flex: 1;
+    text-align: center;
+  }
 }
 </style>

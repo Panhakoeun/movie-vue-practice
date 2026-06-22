@@ -83,6 +83,8 @@ h3 {
   margin: 0;
   color: #f8fafc;
   font-size: 1.15rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 p {
@@ -108,8 +110,11 @@ button {
   border-radius: 6px;
   padding: 0 10px;
   font: inherit;
+  font-size: 0.95rem;
   font-weight: 700;
+  line-height: 1.2;
   cursor: pointer;
+  text-align: center;
 }
 
 .details-link {
@@ -149,5 +154,20 @@ button:hover {
 
 .delete-button:hover {
   background: #991b1b;
+}
+
+@media (max-width: 420px) {
+  .content {
+    padding: 14px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .details-link,
+  .watch-link {
+    grid-column: auto;
+  }
 }
 </style>
