@@ -29,4 +29,13 @@ export default [
     image: 'https://image.tmdb.org/t/p/w500/8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg',
     videoUrl: 'https://www.youtube.com/',
   },
+  {
+    id: 4,
+    title: 'ស្ទាវអត់ក្បាល',
+    genre: 'រឿងខ្មោច',
+    year: 2026,
+    description: 'រន្ធត់ព្រឺព្រួច',
+    image: 'https://i.ytimg.com/vi/kzAhy2aIJsg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC7lSelkTW_2D84NxbLF0EBzn_pXg',
+    videoUrl: 'https://www.youtube.com/watch?v=kzAhy2aIJsg',
+  },
 ]
