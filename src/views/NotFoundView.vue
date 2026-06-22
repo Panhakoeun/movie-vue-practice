@@ -17,14 +17,14 @@
 
 h1 {
   margin: 0;
-  color: #f8fafc;
+  color: var(--ink);
   font-size: clamp(4rem, 18vw, 8rem);
   line-height: 1;
 }
 
 p {
   margin: 12px 0 24px;
-  color: #cbd5e1;
+  color: var(--muted);
   font-size: 1.15rem;
 }
 
@@ -35,9 +35,9 @@ a {
   min-height: 42px;
   border-radius: 6px;
   padding: 0 16px;
-  background: #f59e0b;
-  color: #111827;
-  font-weight: 700;
+  background: var(--ink);
+  color: #ffffff;
+  font-weight: 800;
   text-decoration: none;
 }
 

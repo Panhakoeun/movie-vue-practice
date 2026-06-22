@@ -8,15 +8,20 @@ defineEmits(['edit', 'delete'])
 
 <template>
   <div class="card">
-    <img class="poster" :src="movie.image" :alt="movie.title" />
+    <RouterLink class="poster-link" :to="`/movies/${movie.id}`">
+      <img class="poster" :src="movie.image" :alt="movie.title" />
+    </RouterLink>
 
     <div class="content">
-      <span class="genre">{{ movie.genre }}</span>
+      <div class="meta">
+        <span class="genre">{{ movie.genre }}</span>
+        <span class="year">{{ movie.year }}</span>
+      </div>
+
       <h3>{{ movie.title }}</h3>
-      <p>{{ movie.year }}</p>
 
       <div class="actions">
-        <RouterLink class="details-link" :to="`/movies/${movie.id}`">View Details</RouterLink>
+        <RouterLink class="details-link" :to="`/movies/${movie.id}`">Details</RouterLink>
         <a
           v-if="movie.videoUrl"
           class="watch-link"
@@ -38,10 +43,11 @@ defineEmits(['edit', 'delete'])
 <style scoped>
 .card {
   overflow: hidden;
-  border: 1px solid #263247;
+  height: 100%;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: #121a29;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+  background: var(--surface);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
@@ -50,8 +56,13 @@ defineEmits(['edit', 'delete'])
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #f59e0b;
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.36);
+  border-color: rgba(225, 29, 72, 0.36);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.poster-link {
+  display: block;
+  background: var(--surface-soft);
 }
 
 .poster {
@@ -59,37 +70,53 @@ defineEmits(['edit', 'delete'])
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  background: #263247;
+  background: var(--surface-soft);
 }
 
 .content {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   padding: 16px;
 }
 
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .genre {
-  width: fit-content;
-  border: 1px solid #3b4860;
-  border-radius: 999px;
-  padding: 4px 9px;
-  color: #fbbf24;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--accent);
   font-size: 0.75rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  white-space: nowrap;
   letter-spacing: 0;
 }
 
 h3 {
   margin: 0;
-  color: #f8fafc;
+  min-height: 2.6em;
+  color: var(--ink);
   font-size: 1.15rem;
   line-height: 1.25;
   overflow-wrap: anywhere;
 }
 
+.year {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
 p {
   margin: 0;
-  color: #a8b3c7;
+  color: var(--muted);
 }
 
 .actions {
@@ -119,41 +146,42 @@ button {
 
 .details-link {
   grid-column: 1 / -1;
-  background: #f59e0b;
-  color: #111827;
+  background: var(--ink);
+  color: #ffffff;
   text-decoration: none;
 }
 
 .details-link:hover {
-  background: #fbbf24;
+  background: #263244;
 }
 
 .watch-link {
   grid-column: 1 / -1;
-  background: #0ea5e9;
-  color: #06111f;
+  background: var(--accent);
+  color: #ffffff;
   text-decoration: none;
 }
 
 .watch-link:hover {
-  background: #38bdf8;
+  background: var(--accent-dark);
 }
 
 button {
-  background: #263247;
-  color: #f8fafc;
+  background: var(--surface-soft);
+  color: var(--ink);
 }
 
 button:hover {
-  background: #334155;
+  background: #dde6ef;
 }
 
 .delete-button {
-  background: #7f1d1d;
+  background: #fff1f3;
+  color: var(--accent-dark);
 }
 
 .delete-button:hover {
-  background: #991b1b;
+  background: #ffe4e9;
 }
 
 @media (max-width: 420px) {

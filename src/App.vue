@@ -1,8 +1,15 @@
 <template>
   <div class="app-shell">
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/search">Search</RouterLink>
+    <nav class="top-nav">
+      <RouterLink class="brand" to="/">
+        <span class="brand-mark">M</span>
+        <span>Movie Shelf</span>
+      </RouterLink>
+
+      <div class="nav-links">
+        <RouterLink to="/">Library</RouterLink>
+        <RouterLink to="/search">Search</RouterLink>
+      </div>
     </nav>
 
     <RouterView />
@@ -14,14 +21,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #eef3f8;
+  --text: #111827;
+  --muted: #667085;
+  --line: #d9e1ea;
+  --accent: #e11d48;
+  --accent-dark: #be123c;
+  --accent-soft: #fff1f3;
+  --ink: #0f172a;
+  --shadow: 0 20px 55px rgba(15, 23, 42, 0.1);
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 15% 10%, rgba(245, 158, 11, 0.16), transparent 30%),
-    linear-gradient(135deg, #090e18 0%, #101827 52%, #151827 100%);
-  color: #e5edf8;
+    linear-gradient(180deg, rgba(255, 241, 243, 0.72) 0, rgba(245, 247, 251, 0) 330px),
+    var(--bg);
+  color: var(--text);
   font-family:
     Inter,
     ui-sans-serif,
@@ -47,42 +68,84 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: rgba(225, 29, 72, 0.18);
+}
+
 .app-shell {
   min-height: 100vh;
 }
 
-nav {
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px 16px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-  background: rgba(9, 14, 24, 0.72);
-  backdrop-filter: blur(14px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px max(18px, calc((100% - 1180px) / 2));
+  border-bottom: 1px solid rgba(217, 225, 234, 0.8);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
 }
 
-nav a {
-  border-radius: 6px;
-  padding: 9px 12px;
-  color: #cbd5e1;
-  font-weight: 700;
+.brand,
+.nav-links a {
   text-decoration: none;
 }
 
-nav a:hover,
-nav a.router-link-active {
-  background: #f59e0b;
-  color: #111827;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.brand-mark {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a {
+  border-radius: 6px;
+  padding: 9px 13px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.nav-links a:hover,
+.nav-links a.router-link-active {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
 }
 
 @media (max-width: 480px) {
-  nav {
-    justify-content: stretch;
-    padding: 12px;
+  .top-nav {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 14px;
   }
 
-  nav a {
+  .nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links a {
     flex: 1;
     text-align: center;
   }

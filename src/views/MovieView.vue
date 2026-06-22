@@ -10,7 +10,9 @@ const movie = computed(() => findMovie(props.id))
 </script>
 <template>
   <main v-if="movie" class="movie-page">
-    <img class="poster" :src="movie.image" :alt="movie.title" />
+    <div class="poster-wrap">
+      <img class="poster" :src="movie.image" :alt="movie.title" />
+    </div>
 
     <section class="details">
       <span>{{ movie.genre }}</span>
@@ -40,48 +42,58 @@ const movie = computed(() => findMovie(props.id))
   display: grid;
   grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
   gap: clamp(22px, 4vw, 34px);
-  width: min(980px, calc(100% - 24px));
+  width: min(1040px, calc(100% - 32px));
   margin: 0 auto;
-  padding: clamp(26px, 5vw, 42px) 0 60px;
+  padding: clamp(30px, 5vw, 58px) 0 64px;
   align-items: start;
 }
 
+.poster-wrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
 .poster {
+  display: block;
   width: 100%;
   border-radius: 8px;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38);
 }
 
 .details {
-  padding-top: 12px;
+  padding-top: 18px;
 }
 
 span {
-  color: #f59e0b;
-  font-weight: 800;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
 h1 {
   margin: 10px 0 8px;
-  color: #f8fafc;
-  font-size: clamp(2.1rem, 9vw, 5rem);
-  line-height: 1;
+  color: var(--ink);
+  font-size: clamp(2.25rem, 9vw, 5.5rem);
+  line-height: 1.02;
   overflow-wrap: anywhere;
 }
 
 .year {
   margin: 0 0 24px;
-  color: #a8b3c7;
+  color: var(--muted);
   font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .description {
   max-width: 560px;
   margin: 0;
-  color: #dbe4f0;
+  color: #344054;
   font-size: 1.08rem;
   line-height: 1.7;
 }
@@ -111,21 +123,21 @@ button {
 .review-link {
   display: inline-flex;
   align-items: center;
-  color: #111827;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .watch-link {
-  background: #0ea5e9;
+  background: var(--accent);
 }
 
 .review-link {
-  background: #f59e0b;
+  background: var(--ink);
 }
 
 button {
-  background: #263247;
-  color: #f8fafc;
+  background: var(--surface-soft);
+  color: var(--ink);
 }
 
 @media (max-width: 720px) {
@@ -133,18 +145,18 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .poster {
+  .poster-wrap {
     max-width: 340px;
   }
 }
 
 @media (max-width: 480px) {
   .movie-page {
-    width: min(100% - 20px, 980px);
+    width: min(100% - 20px, 1040px);
     padding-bottom: 42px;
   }
 
-  .poster {
+  .poster-wrap {
     justify-self: center;
   }
 

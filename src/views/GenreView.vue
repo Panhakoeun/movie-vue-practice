@@ -27,9 +27,9 @@ const filteredMovies = computed(() => movies.value.filter((m) => m.genre === pro
 
 <style lang="scss" scoped>
 .genre-page {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 34px 0 54px;
+  padding: clamp(28px, 5vw, 52px) 0 58px;
 }
 
 .heading {
@@ -38,26 +38,32 @@ const filteredMovies = computed(() => movies.value.filter((m) => m.genre === pro
 
 .heading p {
   margin: 0 0 8px;
-  color: #f59e0b;
-  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
 .heading h1 {
   margin: 0;
-  color: #f8fafc;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
+  color: var(--ink);
+  font-size: clamp(2.25rem, 8vw, 4.8rem);
+  line-height: 1.05;
   text-transform: capitalize;
 }
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: clamp(16px, 3vw, 22px);
 }
 
 .empty {
-  color: #cbd5e1;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--muted);
+  text-align: center;
 }
 </style>

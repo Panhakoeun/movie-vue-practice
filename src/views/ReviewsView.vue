@@ -25,7 +25,7 @@ defineProps({
 .reviews-page {
   width: min(760px, calc(100% - 24px));
   margin: 0 auto;
-  padding: clamp(24px, 5vw, 34px) 0 54px;
+  padding: clamp(28px, 5vw, 52px) 0 58px;
 }
 
 .heading {
@@ -34,15 +34,16 @@ defineProps({
 
 .heading p {
   margin: 0 0 8px;
-  color: #f59e0b;
-  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
 .heading h1 {
   margin: 0;
-  color: #f8fafc;
-  font-size: clamp(2rem, 8vw, 4rem);
+  color: var(--ink);
+  font-size: clamp(2.25rem, 8vw, 4.8rem);
   line-height: 1.05;
   overflow-wrap: anywhere;
 }
@@ -55,11 +56,12 @@ ul {
 }
 
 li {
-  border: 1px solid #263247;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 16px;
-  background: #121a29;
-  color: #dbe4f0;
+  padding: 18px;
+  background: #ffffff;
+  color: #344054;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
 }
 
 .back-link {
@@ -69,9 +71,9 @@ li {
   margin-top: 18px;
   border-radius: 6px;
   padding: 0 16px;
-  background: #f59e0b;
-  color: #111827;
-  font-weight: 700;
+  background: var(--ink);
+  color: #ffffff;
+  font-weight: 800;
   text-decoration: none;
 }
 

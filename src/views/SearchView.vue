@@ -30,7 +30,10 @@ const results = computed(() => {
       <h1>Find your movie</h1>
     </section>
 
-    <input v-model="keyword" type="search" placeholder="Search by title..." />
+    <div class="search-box">
+      <input v-model="keyword" type="search" placeholder="Search by title..." />
+      <span>{{ results.length }} results</span>
+    </div>
 
     <section v-if="results.length" class="movie-grid">
       <MovieCard v-for="movie in results" :key="movie.id" :movie="movie" />
@@ -42,9 +45,9 @@ const results = computed(() => {
 
 <style lang="scss" scoped>
 .search-page {
-  width: min(1120px, calc(100% - 24px));
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: clamp(24px, 5vw, 34px) 0 54px;
+  padding: clamp(28px, 5vw, 52px) 0 58px;
 }
 
 .heading {
@@ -53,35 +56,49 @@ const results = computed(() => {
 
 .heading p {
   margin: 0 0 8px;
-  color: #f59e0b;
-  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
 .heading h1 {
   margin: 0;
-  color: #f8fafc;
-  font-size: clamp(2rem, 8vw, 4rem);
+  color: var(--ink);
+  font-size: clamp(2.25rem, 8vw, 4.8rem);
   line-height: 1.05;
   overflow-wrap: anywhere;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.search-box span {
+  color: var(--muted);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 input {
   width: min(520px, 100%);
   min-height: 48px;
-  margin-bottom: 26px;
-  border: 1px solid #334155;
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 16px;
-  background: #121a29;
-  color: #f8fafc;
+  background: #ffffff;
+  color: var(--ink);
   font: inherit;
   outline: none;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
 }
 
 input:focus {
-  border-color: #f59e0b;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.16);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
 }
 
 .movie-grid {
@@ -91,13 +108,23 @@ input:focus {
 }
 
 .empty {
-  color: #cbd5e1;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--muted);
+  text-align: center;
 }
 
 @media (max-width: 480px) {
   .search-page {
-    width: min(100% - 20px, 1120px);
+    width: min(100% - 20px, 1180px);
     padding-bottom: 40px;
+  }
+
+  .search-box {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
 </style>
