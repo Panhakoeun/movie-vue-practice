@@ -2,10 +2,23 @@ import defaultMovies from '@/data/movies'
 import { ref, watch } from 'vue'
 
 const STORAGE_KEY = 'movie-vue-practice-movies'
+// Bump this version to bust stale localStorage data
+const DATA_VERSION = '2'
+const VERSION_KEY = 'movie-vue-practice-version'
+
 const fallbackImage =
   'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=700&q=80'
 
 function loadMovies() {
+  const savedVersion = localStorage.getItem(VERSION_KEY)
+
+  // If version mismatch, clear stale data and return fresh defaults
+  if (savedVersion !== DATA_VERSION) {
+    localStorage.setItem(VERSION_KEY, DATA_VERSION)
+    localStorage.removeItem(STORAGE_KEY)
+    return [...defaultMovies]
+  }
+
   const savedMovies = localStorage.getItem(STORAGE_KEY)
 
   if (!savedMovies) {

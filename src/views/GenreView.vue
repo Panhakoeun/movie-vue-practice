@@ -14,7 +14,7 @@ const filteredMovies = computed(() => movies.value.filter((m) => m.genre === pro
   <main class="genre-page">
     <section class="heading">
       <p>Genre</p>
-      <h1>{{ slug }}</h1>
+      <h1>{{ props.slug }}</h1>
     </section>
 
     <section v-if="filteredMovies.length" class="movie-grid">

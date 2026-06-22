@@ -40,7 +40,7 @@ function resetForm() {
 function saveMovie() {
   const movie = {
     title: form.title.trim(),
-    genre: form.genre.trim().toLowerCase(),
+    genre: form.genre.trim(),
     year: form.year,
     description: form.description.trim(),
     image: form.image.trim(),

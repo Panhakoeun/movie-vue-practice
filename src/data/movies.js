@@ -23,21 +23,21 @@ export default [
   {
     id: 3,
     title: 'Tom and Jerry',
-    genre: 'action',
-    year: 2022,
+    genre: 'animation',
+    year: 2021,
     description: 'Conflict between cat and mouse',
     image: 'https://image.tmdb.org/t/p/w500/8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg',
     videoUrl: 'https://www.youtube.com/',
   },
   {
     id: 4,
-    title: 'ស្ទាវអត់ក្បាល',
+    title: 'Agung Udijana',
     genre: 'រឿងខ្មោច',
     year: 2026,
     description: 'រន្ធត់ព្រឺព្រួច',
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCe_ZLa-BQA4_b4sfktCJywCAi2E-CZIerA&s',
-    videoUrl: 'https://www.youtube.com/watch?v=kzAhy2aIJsg',
+      'https://m.media-amazon.com/images/M/MV5BODFkYWU5MTAtYTZhYi00Zjk0LWI3YmUtYjQwNTlkNjc5ODAwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg',
+    videoUrl: 'https://youtu.be/l9noQ3zF3uk?si=EyPSh3mCJT2nP9hH',
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ export default [
     id: 6,
     title: 'The Meat Grinder',
     genre: 'រឿងខ្មោចទុកមើល២នាក់សង្សា',
-    year: 2026,
+    year: 2008,
     description: 'រន្ធត់ព្រឺព្រួច',
     image:
       'https://m.media-amazon.com/images/I/81He7ZFL1ZL._AC_UF894,1000_QL80_.jpg',
@@ -61,12 +61,12 @@ export default [
   },
   {
     id: 7,
-    title: ' DEAD AGAIN',
+    title: 'DEAD AGAIN',
     genre: 'រឿងកូរ៉េ',
-    year: 2026,
+    year: 2010,
     description: 'រន្ធត់ព្រឺព្រួច',
     image:
-      'https://movieassetsdigital.sgp1.cdn.digitaloceanspaces.com/original/50ad856ad036973206273efe6579d135279ac832',
+      'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=700&q=80',
     videoUrl: 'https://youtu.be/y97D-Ixgya0?si=VOEHCc4GdY9Qf5LU',
   },
 ]
